@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VT Multi Services – Bhopal's expert for AC, Solar, CCTV, and Water Purification. Authorised partner for Voltas, Daikin, Blue Star & LG." />
+  <title>VT Multi Services – Bhopal's Complete Home & Business Solutions</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ============ TOKENS ============ */
+    :root {
+      --navy: #0F1B2D;
+      --navy-mid: #162236;
+      --blue: #0EA5E9;
+      --blue-light: #38BDF8;
+      --amber: #F59E0B;
+      --green: #10B981;
+      --white: #F8FAFC;
+      --muted: #94A3B8;
+      --card-bg: #1A2D42;
+      --border: rgba(255,255,255,0.08);
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 27, 45, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--blue); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue-light); }
+
+    /* ============ TICKER ============ */
+    .ticker-wrap {
+      background: var(--blue);
+      overflow: hidden;
+      padding: 0.5rem 0;
+    }
+    .ticker-inner {
+      display: flex;
+      width: max-content;
+      animation: ticker 35s linear infinite;
+    }
+    .ticker-item {
+      padding: 0 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .ticker-item .sep { margin: 0 0.5rem; opacity: 0.6; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 5rem 5vw 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: var(--blue-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--blue); }
+    .hero-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .btn-primary {
+      background: #25D366;
+      color: #fff;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.04);
+    }
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .trust-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 0.25rem;
+    }
+    .trust-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* ============ STATS ============ */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-item {
+      background: var(--navy);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ============ SECTION COMMON ============ */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 5vw;
+    }
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-style: normal; color: var(--blue); }
+
+    /* ============ SERVICE CARDS ============ */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--card-bg);
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: #1E3352; }
+    .service-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .service-icon-name {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .icon-ac    { background: rgba(14,165,233,0.15); }
+    .icon-solar { background: rgba(245,158,11,0.15); }
+    .icon-cctv  { background: rgba(16,185,129,0.15); }
+    .icon-water { background: rgba(99,102,241,0.15); }
+    .service-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .service-from {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .chevron {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .service-card.open .chevron { transform: rotate(180deg); }
+    .service-body {
+      display: none;
+      padding: 0 1.5rem 1.5rem;
+    }
+    .service-card.open .service-body { display: block; }
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .price-table tr { border-bottom: 1px solid var(--border); }
+    .price-table tr:last-child { border-bottom: none; }
+    .price-table td { padding: 0.7rem 0; vertical-align: top; }
+    .price-table td:first-child { color: var(--white); padding-right: 1rem; }
+    .price-table td:last-child {
+      text-align: right;
+      color: var(--blue-light);
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+    .service-note {
+      margin-top: 1rem;
+      padding: 0.6rem 0.85rem;
+      border-left: 2px solid var(--green);
+      background: rgba(16,185,129,0.07);
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-radius: 0 4px 4px 0;
+    }
+    .service-cta {
+      margin-top: 1.25rem;
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .service-cta:hover { opacity: 0.88; }
+
+    /* ============ WHY US ============ */
+    .why-section {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .why-card {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.2s;
+    }
+    .why-card:hover { border-color: rgba(14,165,233,0.3); }
+    .why-icon { font-size: 1.5rem; margin-bottom: 0.85rem; }
+    .why-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .why-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ============ AMC ============ */
+    .amc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .amc-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      background: var(--card-bg);
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .amc-card:hover { transform: translateY(-3px); border-color: rgba(14,165,233,0.3); }
+    .amc-card.featured {
+      border-color: var(--blue);
+      background: linear-gradient(145deg, #1A2D42, #152538);
+    }
+    .amc-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+    .amc-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .amc-scope { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .amc-price {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .amc-price-period { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .amc-features { list-style: none; margin-bottom: 1.75rem; }
+    .amc-features li {
+      font-size: 0.85rem;
+      padding: 0.4rem 0;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .amc-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+    .amc-cta {
+      display: block;
+      text-align: center;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: var(--blue-light);
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .amc-cta:hover { background: rgba(14,165,233,0.2); }
+    .amc-card.featured .amc-cta {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .amc-card.featured .amc-cta:hover { background: var(--blue-light); }
+
+    /* ============ CONTACT ============ */
+    .contact-section {
+      text-align: center;
+      padding: 5rem 5vw;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .contact-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+    .btn-wa {
+      background: #25D366;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.15s;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.25);
+    }
+    .btn-wa:hover { transform: translateY(-2px); }
+    .btn-call {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .btn-call:hover { background: rgba(255,255,255,0.1); }
+    .contact-meta { font-size: 0.85rem; color: var(--muted); margin-top: 1.25rem; }
+
+    /* ============ FOOTER ============ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ============ FLOAT WA ============ */
+    .float-wa {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      z-index: 200;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .float-wa:hover { transform: scale(1.08); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .service-grid { grid-template-columns: 1fr; }
+      .hero { padding: 3rem 5vw 2.5rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-inner { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919575957549?text=Hi,%20I%20need%20a%20service%20quote"
+   class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp us">💬</a>
+
+<!-- ======= NAV ======= -->
+<nav>
+  <a href="#" class="logo">VT<span>.Services</span></a>
+  <ul class="nav-links">
+    <li><a href="#verticals">Services</a></li>
+    <li><a href="#amc">AMC Plans</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Quote →</a>
+</nav>
+
+<!-- ======= TICKER ======= -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">❄️ AC Service <strong>₹399</strong><span class="sep">·</span></span>
+    <span class="ticker-item">☀️ Solar 3kW — Subsidy Available<span class="sep">·</span></span>
+    <span class="ticker-item">📹 CCTV 2-Cam Package <strong>₹5,500</strong><span class="sep">·</span></span>
+    <span class="ticker-item">💧 RO Service <strong>₹499</strong><span class="sep">·</span></span>
+    <span class="ticker-item">🛡️ Free Site Visit — All Services<span class="sep">·</span></span>
+    <span class="ticker-item">⚡ Same-Day Booking Available<span class="sep">·</span></span>
+    <!-- Duplicated for seamless loop -->
+    <span class="ticker-item">❄️ AC Service <strong>₹399</strong><span class="sep">·</span></span>
+    <span class="ticker-item">☀️ Solar 3kW — Subsidy Available<span class="sep">·</span></span>
+    <span class="ticker-item">📹 CCTV 2-Cam Package <strong>₹5,500</strong><span class="sep">·</span></span>
+    <span class="ticker-item">💧 RO Service <strong>₹499</strong><span class="sep">·</span></span>
+    <span class="ticker-item">🛡️ Free Site Visit — All Services<span class="sep">·</span></span>
+    <span class="ticker-item">⚡ Same-Day Booking Available<span class="sep">·</span></span>
+  </div>
+</div>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="hero-eyebrow">📍 Bhopal's Multi-Service Expert</div>
+  <h1>One Call.<br><em>All Solutions.</em></h1>
+  <p class="hero-sub">AC, Solar, CCTV, Water Purification — professionally installed, maintained, and guaranteed. Serving homes, offices & commercial setups across Bhopal for 8+ years.</p>
+  <div class="hero-actions">
+    <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20a%20quote" class="btn-primary" target="_blank" rel="noopener">📲 WhatsApp Quote</a>
+    <a href="#verticals" class="btn-secondary">All Services ↓</a>
+  </div>
+  <div class="trust-bar">
+    <span class="trust-label">Authorised</span>
+    <span class="trust-badge">Voltas</span>
+    <span class="trust-badge">Daikin ASP</span>
+    <span class="trust-badge">Blue Star</span>
+    <span class="trust-badge">LG Certified</span>
+  </div>
+</section>
+
+<!-- ======= STATS ======= -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Happy Customers</div></div>
+  <div class="stat-item"><div class="stat-number">8+</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Service Verticals</div></div>
+  <div class="stat-item"><div class="stat-number">24hr</div><div class="stat-label">Response Time</div></div>
+  <div class="stat-item"><div class="stat-number">₹0</div><div class="stat-label">Site Visit Charge</div></div>
+</div>
+
+<!-- ======= SERVICES ======= -->
+<div id="verticals">
+  <section class="section">
+    <div class="section-tag">Our Services</div>
+    <h2 class="section-title">Tap a service to<br><em>see full pricing</em></h2>
+
+    <div class="service-grid">
+
+      <!-- AC / HVAC -->
+      <div class="service-card" id="card-hvac">
+        <div class="service-header" onclick="toggleCard(this)">
+          <div class="service-icon-name">
+            <div class="service-icon icon-ac">❄️</div>
+            <div>
+              <div class="service-name">AC / HVAC Services</div>
+              <div class="service-from">From ₹399 · Voltas · Daikin · LG</div>
+            </div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="service-body">
+          <table class="price-table">
+            <tr><td>AC Installation (Split 1–2 Ton)<br><small style="color:var(--muted)">Includes piping up to 3m</small></td><td>₹800 – ₹1,200</td></tr>
+            <tr><td>AC Service & Gas Check 🔥<br><small style="color:var(--muted)">Cleaning + performance test</small></td><td>₹399</td></tr>
+            <tr><td>Gas Refilling (R22 / R32 / R410A)<br><small style="color:var(--muted)">Per kg, gas extra</small></td><td>₹700 – ₹1,500</td></tr>
+            <tr><td>Jet Deep Cleaning<br><small style="color:var(--muted)">Both units + drain flush</small></td><td>₹599</td></tr>
+            <tr><td>Compressor Replacement<br><small style="color:var(--muted)">Labour only, part extra</small></td><td>₹1,200 – ₹2,500</td></tr>
+            <tr><td>Cassette / Ducted AC Install<br><small style="color:var(--muted)">Commercial setups</small></td><td>₹2,500 – ₹6,000</td></tr>
+            <tr><td>PCB / Board Repair<br><small style="color:var(--muted)">Diagnostics included</small></td><td>₹800 – ₹2,000</td></tr>
+          </table>
+          <div class="service-note">🛡️ 30-day service warranty on all jobs</div>
+          <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20AC%20service" class="service-cta" target="_blank" rel="noopener">Book Now →</a>
+        </div>
+      </div>
+
+      <!-- SOLAR -->
+      <div class="service-card" id="card-solar">
+        <div class="service-header" onclick="toggleCard(this)">
+          <div class="service-icon-name">
+            <div class="service-icon icon-solar">☀️</div>
+            <div>
+              <div class="service-name">Solar Energy Solutions</div>
+              <div class="service-from">From ₹55,000 · Rooftop · Commercial</div>
+            </div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="service-body">
+          <table class="price-table">
+            <tr><td>Energy Audit (Residential) 🆕<br><small style="color:var(--muted)">Full consumption analysis + report</small></td><td>₹999 – ₹1,999</td></tr>
+            <tr><td>Rooftop Solar 1kW (On-Grid)<br><small style="color:var(--muted)">Panel + inverter + installation</small></td><td>₹55,000 – ₹65,000</td></tr>
+            <tr><td>Rooftop Solar 3kW (On-Grid) ⭐<br><small style="color:var(--muted)">Subsidy eligible under PM Surya Ghar</small></td><td>₹1.5L – ₹1.8L</td></tr>
+            <tr><td>5kW On-Grid System<br><small style="color:var(--muted)">Commercial / large homes</small></td><td>₹2.4L – ₹2.9L</td></tr>
+            <tr><td>Solar Panel Cleaning (per panel)<br><small style="color:var(--muted)">Restores 15–20% lost output</small></td><td>₹50 – ₹80</td></tr>
+            <tr><td>Inverter Replacement / Upgrade<br><small style="color:var(--muted)">Labour + commissioning</small></td><td>₹1,200 – ₹2,500</td></tr>
+            <tr><td>Commercial Solar Consulting<br><small style="color:var(--muted)">Site survey + feasibility report</small></td><td>₹2,500 – ₹5,000</td></tr>
+          </table>
+          <div class="service-note">💰 PM Surya Ghar subsidy assistance included</div>
+          <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20solar%20consultation" class="service-cta" target="_blank" rel="noopener">Get Quote →</a>
+        </div>
+      </div>
+
+      <!-- CCTV -->
+      <div class="service-card" id="card-cctv">
+        <div class="service-header" onclick="toggleCard(this)">
+          <div class="service-icon-name">
+            <div class="service-icon icon-cctv">📹</div>
+            <div>
+              <div class="service-name">CCTV & Security Systems</div>
+              <div class="service-from">From ₹5,500 · Home & Commercial</div>
+            </div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="service-body">
+          <table class="price-table">
+            <tr><td>2-Camera Home Package 🔥<br><small style="color:var(--muted)">2MP + DVR + 500GB HDD + installation</small></td><td>₹5,500 – ₹7,000</td></tr>
+            <tr><td>4-Camera Office Package<br><small style="color:var(--muted)">2MP + night vision + remote app access</small></td><td>₹9,000 – ₹12,000</td></tr>
+            <tr><td>8-Camera Commercial Setup<br><small style="color:var(--muted)">5MP + NVR + 1TB storage + POE</small></td><td>₹18,000 – ₹26,000</td></tr>
+            <tr><td>IP Camera Install (per camera)<br><small style="color:var(--muted)">Labour only</small></td><td>₹400 – ₹700</td></tr>
+            <tr><td>DVR / NVR Repair & Config<br><small style="color:var(--muted)">Password reset, HDD, remote access fix</small></td><td>₹500 – ₹1,200</td></tr>
+            <tr><td>Mobile Remote Access Setup<br><small style="color:var(--muted)">Configure live view on phone</small></td><td>₹300</td></tr>
+            <tr><td>PTZ Camera Installation<br><small style="color:var(--muted)">Per unit, hardware extra</small></td><td>₹800 – ₹1,500</td></tr>
+          </table>
+          <div class="service-note">🔒 Free site survey for 4+ camera setups</div>
+          <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20CCTV%20installation" class="service-cta" target="_blank" rel="noopener">Book Survey →</a>
+        </div>
+      </div>
+
+      <!-- WATER -->
+      <div class="service-card" id="card-water">
+        <div class="service-header" onclick="toggleCard(this)">
+          <div class="service-icon-name">
+            <div class="service-icon icon-water">💧</div>
+            <div>
+              <div class="service-name">Water Purification</div>
+              <div class="service-from">From ₹99 · RO · UV · AMC · TDS Testing</div>
+            </div>
+          </div>
+          <span class="chevron">▾</span>
+        </div>
+        <div class="service-body">
+          <table class="price-table">
+            <tr><td>RO Installation (any brand)<br><small style="color:var(--muted)">Includes stand + drainage</small></td><td>₹400 – ₹700</td></tr>
+            <tr><td>RO Service (filter change) 🔥<br><small style="color:var(--muted)">All 3 filters + membrane check</small></td><td>₹499 – ₹799</td></tr>
+            <tr><td>TDS Testing + Water Quality Report<br><small style="color:var(--muted)">On-site digital meter test</small></td><td>₹99</td></tr>
+            <tr><td>RO Membrane Replacement<br><small style="color:var(--muted)">Part + labour</small></td><td>₹800 – ₹1,400</td></tr>
+            <tr><td>UV Lamp Replacement<br><small style="color:var(--muted)">Annual recommended</small></td><td>₹350 – ₹600</td></tr>
+            <tr><td>Commercial RO (100 LPH+) Install<br><small style="color:var(--muted)">Offices, hostels, factories</small></td><td>₹3,000 – ₹8,000</td></tr>
+            <tr><td>Water Softener Installation<br><small style="color:var(--muted)">Hard water areas, borewell</small></td><td>₹1,500 – ₹3,000</td></tr>
+          </table>
+          <div class="service-note">🧪 Free TDS test with any RO service booking</div>
+          <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20RO%20service" class="service-cta" target="_blank" rel="noopener">Book Service →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ======= WHY US ======= -->
+<div id="why" class="why-section">
+  <section class="section">
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-title">Bhopal ki trust,<br><em>expert ki speed</em></h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏅</div>
+        <div class="why-title">Authorised ASP</div>
+        <p class="why-desc">Voltas, Daikin, Blue Star & LG authorised service partner. Real warranty claims processed.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Same-Day Service</div>
+        <p class="why-desc">Book before 12pm — we arrive same day. Emergency slots available for AC breakdowns.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div class="why-title">Transparent Pricing</div>
+        <p class="why-desc">No hidden charges. Price confirmed before any work starts. Bill provided every time.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <div class="why-title">ITI + 8 Yr Expertise</div>
+        <p class="why-desc">ITI RAC certified with GSP SSR advanced training. Not a random handyman — real technical depth.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======= AMC ======= -->
+<div id="amc">
+  <section class="section">
+    <div class="section-tag">Annual Maintenance Contracts</div>
+    <h2 class="section-title">Set it. Forget it.<br><em>Save money.</em></h2>
+    <div class="amc-grid">
+
+      <div class="amc-card">
+        <div class="amc-name">AC Basic AMC</div>
+        <div class="amc-scope">1 AC unit · 1 year</div>
+        <div class="amc-price">₹999</div>
+        <div class="amc-price-period">per year</div>
+        <ul class="amc-features">
+          <li>2 service visits (pre-summer + post-summer)</li>
+          <li>Filter cleaning both visits</li>
+          <li>Gas pressure check</li>
+          <li>Performance report</li>
+          <li>10% off on all repairs</li>
+        </ul>
+        <a href="https://wa.me/919575957549?text=I%20want%20AC%20Basic%20AMC" class="amc-cta" target="_blank" rel="noopener">Start AMC</a>
+      </div>
+
+      <div class="amc-card featured">
+        <div class="amc-badge">⭐ Most Popular</div>
+        <div class="amc-name">Multi-Service AMC</div>
+        <div class="amc-scope">AC + RO + CCTV check · 1 year</div>
+        <div class="amc-price">₹2,499</div>
+        <div class="amc-price-period">per year</div>
+        <ul class="amc-features">
+          <li>AC: 3 visits + deep clean included</li>
+          <li>RO: Annual filter change included</li>
+          <li>CCTV: 1 health check + config update</li>
+          <li>Priority 24hr response</li>
+          <li>15% off all repairs</li>
+          <li>Free TDS test quarterly</li>
+        </ul>
+        <a href="https://wa.me/919575957549?text=I%20want%20Multi-Service%20AMC" class="amc-cta" target="_blank" rel="noopener">Subscribe Now</a>
+      </div>
+
+      <div class="amc-card">
+        <div class="amc-name">Commercial AMC</div>
+        <div class="amc-scope">Offices · hostels · shops</div>
+        <div class="amc-price">₹5,999</div>
+        <div class="amc-price-period">per year</div>
+        <ul class="amc-features">
+          <li>Up to 3 AC units covered</li>
+          <li>Quarterly CCTV health checks</li>
+          <li>Monthly RO filter monitoring</li>
+          <li>Energy audit report included</li>
+          <li>Same-day emergency response</li>
+          <li>20% off all parts + labour</li>
+        </ul>
+        <a href="https://wa.me/919575957549?text=I%20want%20Commercial%20AMC" class="amc-cta" target="_blank" rel="noopener">Contact for Details</a>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ======= CONTACT ======= -->
+<div id="contact" style="background:var(--navy-mid); border-top:1px solid var(--border);">
+  <div class="contact-section">
+    <div class="section-tag">Ready to book?</div>
+    <h2 class="section-title">Let's talk.</h2>
+    <p style="color:var(--muted); font-size:0.95rem;">Free site visit · Same-day slots available · Bhopal & nearby areas</p>
+    <div class="contact-actions">
+      <a href="https://wa.me/919575957549?text=Hi,%20I%20need%20a%20service%20quote" class="btn-wa" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <a href="tel:+919575957549" class="btn-call">📞 Call: 9575957549</a>
+    </div>
+    <p class="contact-meta">Typically replies within 10 minutes · Available 8am – 8pm</p>
+  </div>
+</div>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="footer-copy">© 2026 VT Multi Services, Bhopal · All rights reserved</div>
+  <ul class="footer-links">
+    <li><a href="#verticals">Services</a></li>
+    <li><a href="#amc">AMC</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  function toggleCard(header) {
+    const card = header.closest('.service-card');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.service-card').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+</script>
+</body>
+</html>
